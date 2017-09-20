@@ -1,6 +1,6 @@
 package com.example.productapp.controller;
 
-import java.security.Principal;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +19,7 @@ public class ProductController {
 	ProductService productService;
 
 	@RequestMapping(path = "/products")
-	public String getProducts(Principal principal, Model model) {
-		model.addAttribute("principal", principal);
+	public String getProducts(Model model) {
 		model.addAttribute("products", productService.getProducts());
 		return "product";
 	}
