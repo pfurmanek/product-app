@@ -21,7 +21,7 @@ public class ProductController {
 	@RequestMapping(path = "/products")
 	public String getProducts(Model model) {
 		model.addAttribute("products", productService.getProducts());
-		return "product";
+		return "products";
 	}
 
 	@RequestMapping(path = "/logout")
