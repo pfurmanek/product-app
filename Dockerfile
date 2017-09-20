@@ -5,3 +5,6 @@ ENV AB_JOLOKIA_AUTH_OPENSHIFT true
 ENV JAVA_OPTIONS -Xmx256m -Djava.security.egd=file:///dev/./urandom
 EXPOSE 8081
 ADD target/product-app.jar /deployments/
+USER root
+RUN chown 1000:1000 /opt/jboss/
+USER 1000
