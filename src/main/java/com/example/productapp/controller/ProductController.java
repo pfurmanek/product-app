@@ -17,6 +17,12 @@ public class ProductController {
 
 	@Autowired
 	ProductService productService;
+	
+	@RequestMapping(path = "/")
+	public String getDefault(Principal principal, Model model) {
+		model.addAttribute("principal", principal);
+		return "index";
+	}
 
 	@RequestMapping(path = "/products")
 	public String getProducts(Principal principal, Model model) {
